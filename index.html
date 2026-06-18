@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniela Mejía | Cejas y Pestañas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--gold:#D4AF37;--gold-light:#F4E8C1;--black:#0a0a0a;--dark-gray:#1a1a1a}
+        body{font-family:'Segoe UI',sans-serif;background:var(--black);color:#fff;line-height:1.6}
+        nav{position:fixed;top:0;width:100%;background:rgba(10,10,10,0.95);backdrop-filter:blur(10px);z-index:1000;padding:1rem 5%;border-bottom:2px solid var(--gold)}
+        .nav-container{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+        .logo{font-size:1.5rem;color:var(--gold);text-decoration:none;font-weight:bold}
+        .nav-links{display:flex;gap:2rem}
+        .nav-links a{color:#fff;text-decoration:none;transition:color 0.3s}
+        .nav-links a:hover{color:var(--gold)}
+        .hero{margin-top:70px;min-height:100vh;background:var(--black);display:flex;align-items:center;justify-content:center;text-align:center;padding:5rem 5%}
+        .hero-content{max-width:800px}
+        .hero-logo{max-width:450px;width:100%;margin-bottom:2rem;border:none}
+        .social-banner{display:flex;gap:1rem;justify-content:center;margin-top:2rem;flex-wrap:wrap}
+        .social-btn{padding:1rem 2.5rem;border-radius:50px;display:flex;align-items:center;gap:0.5rem;color:#fff;font-size:1.1rem;font-weight:bold;transition:all 0.3s;text-decoration:none;border:2px solid var(--gold);background:linear-gradient(135deg,var(--gold),#B8941F);color:var(--black);box-shadow:0 4px 15px rgba(212,175,55,0.3)}
+        .social-btn.instagram{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);border-color:transparent;color:#fff}
+        .social-btn.tiktok{background:#000;border-color:var(--gold);color:#fff}
+        .social-btn.whatsapp{background:#25D366;border-color:transparent;color:#fff}
+        .social-btn:hover{transform:translateY(-5px) scale(1.05);box-shadow:0 8px 25px rgba(212,175,55,0.5)}
+        .section-title{text-align:center;color:var(--gold);margin-bottom:2rem;font-size:2.5rem}
+        .section-image{text-align:center;margin-bottom:2rem}
+        .section-image img{max-width:500px;width:100%;border-radius:10px}
+        section{padding:5rem 5%;max-width:1200px;margin:0 auto}
+        .services{background:var(--dark-gray);max-width:100%}
+        .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;max-width:1200px;margin:0 auto}
+        .service-card{background:var(--black);border:2px solid var(--gold);border-radius:15px;padding:2rem;text-align:center;transition:all 0.3s}
+        .service-card:hover{transform:translateY(-10px);box-shadow:0 15px 30px rgba(212,175,55,0.2)}
+        .service-card i{font-size:3rem;color:var(--gold);margin-bottom:1rem}
+        .service-card h3{color:var(--gold);margin-bottom:1rem}
+        .service-card p{color:var(--gold-light);margin-bottom:1rem}
+        .price{font-size:1.8rem;color:var(--gold);font-weight:bold;margin:1rem 0}
+        .btn{padding:0.8rem 2rem;border:2px solid var(--gold);background:transparent;color:var(--gold);text-decoration:none;border-radius:50px;font-weight:bold;transition:all 0.3s;display:inline-block;cursor:pointer}
+        .btn:hover{background:var(--gold);color:var(--black)}
+        .btn-primary{background:var(--gold);color:var(--black)}
+        .about{background:var(--black)}
+        .about-grid{display:grid;grid-template-columns:1fr 2fr;gap:3rem;align-items:center}
+        .about-image img{width:100%;border-radius:15px;border:3px solid var(--gold)}
+        .about-content h3{color:var(--gold);font-size:2rem;margin-bottom:1rem}
+        .about-content p{color:var(--gold-light);margin-bottom:1rem}
+        .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}
+        .stat-item{text-align:center;padding:1rem;background:var(--dark-gray);border:2px solid var(--gold);border-radius:10px}
+        .stat-item .number{font-size:2rem;color:var(--gold);font-weight:bold}
+        .stat-item .label{color:var(--gold-light);font-size:0.9rem}
+        .gallery{background:var(--dark-gray);max-width:100%}
+        .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:0}
+        .gallery-item{position:relative;overflow:hidden;border:2px solid var(--gold);aspect-ratio:1}
+        .gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s}
+        .gallery-item:hover img{transform:scale(1.1)}
+        .tips{background:var(--black)}
+        .tips-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
+        .tip-card{background:var(--dark-gray);border:2px solid var(--gold);border-radius:15px;padding:2rem}
+        .tip-card h3{color:var(--gold);margin-bottom:1rem;font-size:1.5rem}
+        .tip-card p{color:var(--gold-light);margin-bottom:1rem}
+        .tip-card .video-container{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:10px;margin-top:1rem}
+        .tip-card .video-container iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
+        .trajectory{background:var(--dark-gray)}
+        .trajectory-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
+        .trajectory-card{border:3px solid var(--gold);border-radius:15px;overflow:hidden;background:var(--black)}
+        .trajectory-card img{width:100%;height:350px;object-fit:cover}
+        .trajectory-card-content{padding:1.5rem}
+        .trajectory-card h3{color:var(--gold);margin-bottom:1rem}
+        .trajectory-card p{color:var(--gold-light)}
+        .date-badge{display:inline-block;background:var(--gold);color:var(--black);padding:0.3rem 1rem;border-radius:20px;font-weight:bold;margin-top:1rem;font-size:0.9rem}
+        .reviews{background:var(--black)}
+        .reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
+        .review-card{background:var(--dark-gray);border:2px solid var(--gold);border-radius:15px;padding:2rem}
+        .review-card .stars{color:var(--gold);margin-bottom:1rem}
+        .review-card p{color:var(--gold-light);font-style:italic;margin-bottom:1rem}
+        .review-card .client-name{color:var(--gold);font-weight:bold}
+        .contact{background:var(--dark-gray);text-align:center}
+        .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;max-width:800px;margin:0 auto}
+        .contact-item{padding:1.5rem;background:var(--black);border:2px solid var(--gold);border-radius:10px;transition:all 0.3s}
+        .contact-item:hover{transform:translateY(-5px);box-shadow:0 10px 25px rgba(212,175,55,0.2)}
+        .contact-item i{font-size:2.5rem;color:var(--gold);margin-bottom:1rem}
+        .contact-item h3{color:var(--gold);margin-bottom:0.5rem}
+        .contact-item a{color:var(--gold-light);text-decoration:none}
+        .cta-whatsapp{margin-top:3rem}
+        footer{background:var(--black);text-align:center;padding:2rem;border-top:2px solid var(--gold)}
+        footer p{color:var(--gold-light);margin:0.5rem 0}
+        .admin-trigger{position:fixed;bottom:0;left:0;width:100px;height:100px;z-index:9999;cursor:default}
+        .admin-modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);z-index:10000;overflow-y:auto}
+        .admin-modal.active{display:block}
+        .admin-content{max-width:900px;margin:2rem auto;padding:2rem;background:var(--dark-gray);border:3px solid var(--gold);border-radius:15px}
+        .admin-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem;padding-bottom:1rem;border-bottom:2px solid var(--gold)}
+        .admin-header h2{color:var(--gold)}
+        .close-admin{background:none;border:none;color:var(--gold);font-size:2rem;cursor:pointer}
+        .admin-section{margin-bottom:2rem;padding:1.5rem;background:var(--black);border:2px solid var(--gold);border-radius:10px}
+        .admin-section h3{color:var(--gold);margin-bottom:1rem}
+        .admin-form{display:grid;gap:1rem}
+        .admin-form label{color:var(--gold-light);font-weight:bold}
+        .admin-form input,.admin-form textarea,.admin-form select{width:100%;padding:0.8rem;background:var(--dark-gray);border:2px solid var(--gold);border-radius:8px;color:#fff;font-size:1rem}
+        .admin-form textarea{min-height:100px;resize:vertical}
+        .admin-btn-save{padding:1rem 2rem;background:var(--gold);color:var(--black);border:none;border-radius:8px;font-weight:bold;cursor:pointer;font-size:1.1rem;margin-top:1rem}
+        .admin-btn-save:hover{background:var(--gold-light)}
+        .admin-login{display:flex;flex-direction:column;gap:1rem;align-items:center}
+        .admin-login input{padding:1rem;border:2px solid var(--gold);background:var(--black);color:#fff;border-radius:8px;font-size:1.1rem}
+        @media(max-width:768px){.about-grid,.stats-grid{grid-template-columns:1fr}.nav-links{display:none}.social-banner{flex-direction:column;align-items:center}.social-btn{width:90%;justify-content:center}.hero-logo{max-width:300px}}
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">cyp by DANIELA MEJIA G</a>
+            <div class="nav-links">
+                <a href="#inicio">Inicio</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#sobre-mi">Sobre Mí</a>
+                <a href="#galeria">Galería</a>
+                <a href="#tips">Tips</a>
+                <a href="#trayectoria">Trayectoria</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <img src="https://i.postimg.cc/GmxHSxKz/IMG-4160.jpg" alt="DM Logo" class="hero-logo">
+            <div class="social-banner">
+                <a href="https://www.instagram.com/cypdanielamejia" target="_blank" class="social-btn instagram"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="https://www.tiktok.com/@danielamejiagalvis" target="_blank" class="social-btn tiktok"><i class="fab fa-tiktok"></i> TikTok</a>
+                <a href="#" onclick="selectWhatsAppMessage()" class="social-btn whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="servicios">
+        <h2 class="section-title">Nuestros Servicios</h2>
+        <div class="section-image"><img src="https://i.postimg.cc/vZYQDF7P/IMG-4175.jpg" alt="Servicios"></div>
+        <div class="services-grid" id="servicesGrid">
+            <div class="service-card">
+                <i class="fas fa-eye"></i>
+                <h3>Micropigmentación</h3>
+                <p>Microblading, sombreado y efecto híbrido</p>
+                <div class="price">Desde $150.000</div>
+                <a href="#" onclick="selectWhatsAppMessage()" class="btn btn-primary">Reservar</a>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-star"></i>
+                <h3>Extensiones de Pestañas</h3>
+                <p>Clásico, híbrido y volumen ruso</p>
+                <div class="price">Desde $80.000</div>
+                <a href="#" onclick="selectWhatsAppMessage()" class="btn btn-primary">Reservar</a>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-magic"></i>
+                <h3>Lifting y Laminado</h3>
+                <p>Eleva y da volumen a tus pestañas</p>
+                <div class="price">Desde $70.000</div>
+                <a href="#" onclick="selectWhatsAppMessage()" class="btn btn-primary">Reservar</a>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-paint-brush"></i>
+                <h3>Diseño de Cejas</h3>
+                <p>Diseño personalizado y depilación</p>
+                <div class="price">Desde $30.000</div>
+                <a href="#" onclick="selectWhatsAppMessage()" class="btn btn-primary">Reservar</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="sobre-mi">
+        <h2 class="section-title">Sobre Mí</h2>
+        <div class="about-grid">
+            <div class="about-image"><img src="https://i.postimg.cc/Sxk16g37/IMG-4162.png" alt="Daniela Mejía"></div>
+            <div class="about-content">
+                <h3>Daniela Mejía Galvis</h3>
+                <p><i class="fas fa-certificate" style="color:var(--gold)"></i> Micropigmentadora profesional certificada</p>
+                <p>Especialista en cejas y pestañas con más de 5 años de experiencia transformando miradas. Me apasiona realzar la belleza natural de cada usuaria.</p>
+                <p><i class="fas fa-graduation-cap" style="color:var(--gold)"></i> Formación continua en las mejores academias</p>
+                <div class="stats-grid">
+                    <div class="stat-item"><div class="number">634+</div><div class="label">Publicaciones</div></div>
+                    <div class="stat-item"><div class="number">2,038</div><div class="label">Seguidoras</div></div>
+                    <div class="stat-item"><div class="number">5+</div><div class="label">Años</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery" id="galeria">
+        <h2 class="section-title">Galería</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="https://i.postimg.cc/T16zSgCB/IMG-4161.jpg" alt="Trabajo 1"></div>
+            <div class="gallery-item"><img src="https://i.postimg.cc/Nfb3JyTR/IMG-4177.jpg" alt="Trabajo 2"></div>
+            <div class="gallery-item"><img src="https://i.postimg.cc/fRr6s68t/IMG-4151.jpg" alt="Trabajo 3"></div>
+            <div class="gallery-item"><img src="https://i.postimg.cc/50wGwjb2/IMG-4148.jpg" alt="Trabajo 4"></div>
+            <div class="gallery-item"><img src="https://i.postimg.cc/Zn4QjZqZ/IMG-4180.jpg" alt="Trabajo 5"></div>
+            <div class="gallery-item"><img src="https://i.postimg.cc/jSmkmyjC/IMG-4179.jpg" alt="Trabajo 6"></div>
+        </div>
+    </section>
+
+    <section class="tips" id="tips">
+        <h2 class="section-title">Tips de Belleza</h2>
+        <div class="tips-grid" id="tipsGrid">
+            <div class="tip-card">
+                <h3><i class="fas fa-eye" style="color:var(--gold)"></i> Mantenimiento de Pestañas</h3>
+                <p>Evita mojar las primeras 24 horas. No uses rizador. Limpia con shampoo especial. Cepilla diariamente con cepillo limpio.</p>
+                <div class="video-container"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe></div>
+            </div>
+            <div class="tip-card">
+                <h3><i class="fas fa-moon" style="color:var(--gold)"></i> Cuidados Nocturnos</h3>
+                <p>Duerme boca arriba. Usa funda de seda. Aplica aceite de ricino en cejas. Evita frotar los ojos al despertar.</p>
+                <div class="video-container"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe></div>
+            </div>
+            <div class="tip-card">
+                <h3><i class="fas fa-star" style="color:var(--gold)"></i> Tips Generales</h3>
+                <p>Hidrata tu piel. Usa protector solar. Mantén una rutina de limpieza facial. Consulta siempre con profesionales.</p>
+                <div class="video-container"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="trajectory">
+        <h2 class="section-title">Trayectoria</h2>
+        <div class="trajectory-grid">
+            <div class="trajectory-card">
+                <img src="https://i.postimg.cc/Sxk16g37/IMG-4162.png" alt="Certificación 2024">
+                <div class="trajectory-card-content">
+                    <h3><i class="fas fa-graduation-cap"></i> Certificación 2024</h3>
+                    <p>Graduación en micropigmentación avanzada</p>
+                    <span class="date-badge">Junio 2024</span>
+                </div>
+            </div>
+            <div class="trajectory-card">
+                <img src="https://i.postimg.cc/mgv88Rdd/IMG-4157.jpg" alt="Capacitación">
+                <div class="trajectory-card-content">
+                    <h3><i class="fas fa-award"></i> Formación Especializada</h3>
+                    <p>Técnicas avanzadas de cejas y pestañas</p>
+                    <span class="date-badge">2023</span>
+                </div>
+            </div>
+            <div class="trajectory-card">
+                <img src="https://i.postimg.cc/wvHFY2YX/IMG-4154.jpg" alt="Trayectoria">
+                <div class="trajectory-card-content">
+                    <h3><i class="fas fa-trophy"></i> Experiencia</h3>
+                    <p>Más de 5 años transformando miradas</p>
+                    <span class="date-badge">2020-2024</span>
+                </div>
+            </div>
+            <div class="trajectory-card">
+                <img src="https://i.postimg.cc/nLfGq2z3/IMG-4164.jpg" alt="Actualización">
+                <div class="trajectory-card-content">
+                    <h3><i class="fas fa-sync-alt"></i> Actualización Constante</h3>
+                    <p>Siempre a la vanguardia en tendencias</p>
+                    <span class="date-badge">2024</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="reviews">
+        <h2 class="section-title">Reseñas</h2>
+        <div class="reviews-grid" id="reviewsGrid">
+            <div class="review-card">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p>"Daniela es increíble. Mis pestañas quedaron espectaculares. Totalmente recomendada."</p>
+                <div class="client-name">- María Fernanda G.</div>
+            </div>
+            <div class="review-card">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p>"El mejor diseño de cejas. Muy profesional. El ambiente es súper relajante."</p>
+                <div class="client-name">- Carolina Rodríguez</div>
+            </div>
+            <div class="review-card">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p>"Excelente atención. Mis cejas nunca se habían visto tan bien."</p>
+                <div class="client-name">- Andrea Martínez</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contacto">
+        <h2 class="section-title">Contacto</h2>
+        <div class="contact-grid">
+            <div class="contact-item">
+                <i class="fab fa-whatsapp"></i>
+                <h3>WhatsApp</h3>
+                <a href="#" onclick="selectWhatsAppMessage()">304 338 7836</a>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-instagram"></i>
+                <h3>Instagram</h3>
+                <a href="https://www.instagram.com/cypdanielamejia" target="_blank">@cypdanielamejia</a>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-tiktok"></i>
+                <h3>TikTok</h3>
+                <a href="https://www.tiktok.com/@danielamejiagalvis" target="_blank">@danielamejiagalvis</a>
+            </div>
+        </div>
+        <div class="cta-whatsapp">
+            <a href="#" onclick="selectWhatsAppMessage()" class="btn btn-primary" style="font-size:1.2rem;padding:1.2rem 3rem"><i class="fab fa-whatsapp"></i> Agendar Cita</a>
+        </div>
+    </section>
+
+    <footer>
+        <p style="color:var(--gold)">&copy; 2024 Daniela Mejía - Cejas y Pestañas</p>
+        <p style="font-size:0.9rem"><i class="fas fa-heart" style="color:var(--gold)"></i> Sonsón, Antioquia - Colombia</p>
+    </footer>
+
+    <div class="admin-trigger" id="adminTrigger"></div>
+
+    <div class="admin-modal" id="adminModal">
+        <div class="admin-content">
+            <div class="admin-header">
+                <h2><i class="fas fa-cog"></i> Panel de Administración</h2>
+                <button class="close-admin" onclick="closeAdmin()">✕</button>
+            </div>
+            
+            <div id="adminLogin" class="admin-login">
+                <h3 style="color:var(--gold)">Ingresa contraseña:</h3>
+                <input type="password" id="adminPass" placeholder="Contraseña">
+                <button class="admin-btn-save" onclick="checkAdmin()">Acceder</button>
+            </div>
+
+            <div id="adminPanel" style="display:none">
+                <div class="admin-section">
+                    <h3><i class="fas fa-image"></i> Editar Imágenes</h3>
+                    <div class="admin-form">
+                        <label>Logo Principal URL:</label>
+                        <input type="text" id="editLogo" placeholder="URL del logo">
+                        <label>Imagen Servicios URL:</label>
+                        <input type="text" id="editServicesImg" placeholder="URL imagen servicios">
+                        <label>Imagen Sobre Mí URL:</label>
+                        <input type="text" id="editAboutImg" placeholder="URL imagen sobre mí">
+                        <button class="admin-btn-save" onclick="saveImages()">Guardar Imágenes</button>
+                    </div>
+                </div>
+
+                <div class="admin-section">
+                    <h3><i class="fas fa-edit"></i> Editar Servicios</h3>
+                    <div class="admin-form" id="servicesForm"></div>
+                    <button class="admin-btn-save" onclick="saveServices()">Guardar Servicios</button>
+                </div>
+
+                <div class="admin-section">
+                    <h3><i class="fas fa-lightbulb"></i> Editar Tips de Belleza</h3>
+                    <div class="admin-form" id="tipsForm"></div>
+                    <button class="admin-btn-save" onclick="saveTips()">Guardar Tips</button>
+                </div>
+
+                <div class="admin-section">
+                    <h3><i class="fas fa-star"></i> Editar Reseñas</h3>
+                    <div class="admin-form" id="reviewsForm"></div>
+                    <button class="admin-btn-save" onclick="saveReviews()">Guardar Reseñas</button>
+                </div>
+
+                <div class="admin-section">
+                    <h3><i class="fas fa-image"></i> Editar Galería</h3>
+                    <div class="admin-form" id="galleryForm"></div>
+                    <button class="admin-btn-save" onclick="saveGallery()">Guardar Galería</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let touchCount=0;
+        let touchTimer;
+        const trigger=document.getElementById('adminTrigger');
+        
+        trigger.addEventListener('click',function(e){
+            e.preventDefault();
+            touchCount++;
+            if(touchCount===1){
+                touchTimer=setTimeout(()=>{touchCount=0},800);
+            }
+            if(touchCount===3){
+                clearTimeout(touchTimer);
+                touchCount=0;
+                openAdmin();
+            }
+        });
+
+        function openAdmin(){
+            document.getElementById('adminModal').classList.add('active');
+            document.getElementById('adminLogin').style.display='flex';
+            document.getElementById('adminPanel').style.display='none';
+        }
+
+        function closeAdmin(){
+            document.getElementById('adminModal').classList.remove('active');
+        }
+
+        function checkAdmin(){
+            const pass=document.getElementById('adminPass').value;
+            if(pass==='daniela2024'||pass==='admin123'){
+                document.getElementById('adminLogin').style.display='none';
+                document.getElementById('adminPanel').style.display='block';
+                loadAdminForms();
+            }else{
+                alert('Contraseña incorrecta');
+            }
+        }
+
+        function loadAdminForms(){
+            const services=[
+                {title:'Micropigmentación',desc:'Microblading, sombreado y efecto híbrido',price:'Desde $150.000'},
+                {title:'Extensiones de Pestañas',desc:'Clásico, híbrido y volumen ruso',price:'Desde $80.000'},
+                {title:'Lifting y Laminado',desc:'Eleva y da volumen a tus pestañas',price:'Desde $70.000'},
+                {title:'Diseño de Cejas',desc:'Diseño personalizado y depilación',price:'Desde $30.000'}
+            ];
+            const tips=[
+                {title:'Mantenimiento de Pestañas',desc:'Evita mojar las primeras 24 horas. No uses rizador. Limpia con shampoo especial.',video:'https://www.youtube.com/embed/dQw4w9WgXcQ'},
+                {title:'Cuidados Nocturnos',desc:'Duerme boca arriba. Usa funda de seda. Aplica aceite de ricino.',video:'https://www.youtube.com/embed/dQw4w9WgXcQ'},
+                {title:'Tips Generales',desc:'Hidrata tu piel. Usa protector solar. Mantén rutina de limpieza.',video:'https://www.youtube.com/embed/dQw4w9WgXcQ'}
+            ];
+            const reviews=[
+                {text:'Daniela es increíble. Mis pestañas quedaron espectaculares.',name:'María Fernanda G.'},
+                {text:'El mejor diseño de cejas. Muy profesional.',name:'Carolina Rodríguez'},
+                {text:'Excelente atención. Mis cejas nunca se habían visto tan bien.',name:'Andrea Martínez'}
+            ];
+            const gallery=['https://i.postimg.cc/T16zSgCB/IMG-4161.jpg','https://i.postimg.cc/Nfb3JyTR/IMG-4177.jpg','https://i.postimg.cc/fRr6s68t/IMG-4151.jpg','https://i.postimg.cc/50wGwjb2/IMG-4148.jpg','https://i.postimg.cc/Zn4QjZqZ/IMG-4180.jpg','https://i.postimg.cc/jSmkmyjC/IMG-4179.jpg'];
+
+            let servicesHTML='';
+            services.forEach((s,i)=>{
+                servicesHTML+=`<label>Servicio ${i+1} - Título:</label><input type="text" id="serviceTitle${i}" value="${s.title}">`;
+                servicesHTML+=`<label>Descripción:</label><textarea id="serviceDesc${i}">${s.desc}</textarea>`;
+                servicesHTML+=`<label>Precio:</label><input type="text" id="servicePrice${i}" value="${s.price}">`;
+            });
+            document.getElementById('servicesForm').innerHTML=servicesHTML;
+
+            let tipsHTML='';
+            tips.forEach((t,i)=>{
+                tipsHTML+=`<label>Tip ${i+1} - Título:</label><input type="text" id="tipTitle${i}" value="${t.title}">`;
+                tipsHTML+=`<label>Descripción:</label><textarea id="tipDesc${i}">${t.desc}</textarea>`;
+                tipsHTML+=`<label>URL Video:</label><input type="text" id="tipVideo${i}" value="${t.video}">`;
+            });
+            document.getElementById('tipsForm').innerHTML=tipsHTML;
+
+            let reviewsHTML='';
+            reviews.forEach((r,i)=>{
+                reviewsHTML+=`<label>Reseña ${i+1} - Texto:</label><textarea id="reviewText${i}">${r.text}</textarea>`;
+                reviewsHTML+=`<label>Nombre:</label><input type="text" id="reviewName${i}" value="${r.name}">`;
+            });
+            document.getElementById('reviewsForm').innerHTML=reviewsHTML;
+
+            let galleryHTML='';
+            gallery.forEach((g,i)=>{
+                galleryHTML+=`<label>Imagen ${i+1} URL:</label><input type="text" id="galleryImg${i}" value="${g}">`;
+            });
+            document.getElementById('galleryForm').innerHTML=galleryHTML;
+
+            const saved=JSON.parse(localStorage.getItem('dmContent')||'{}');
+            if(saved.logo)document.getElementById('editLogo').value=saved.logo;
+            if(saved.servicesImg)document.getElementById('editServicesImg').value=saved.servicesImg;
+            if(saved.aboutImg)document.getElementById('editAboutImg').value=saved.aboutImg;
+        }
+
+        function saveImages(){
+            const data=JSON.parse(localStorage.getItem('dmContent')||'{}');
+            data.logo=document.getElementById('editLogo').value;
+            data.servicesImg=document.getElementById('editServicesImg').value;
+            data.aboutImg=document.getElementById('editAboutImg').value;
+            localStorage.setItem('dmContent',JSON.stringify(data));
+            applyChanges();
+            alert('Imágenes guardadas');
+        }
+
+        function saveServices(){
+            const services=[];
+            for(let i=0;i<4;i++){
+                services.push({
+                    title:document.getElementById(`serviceTitle${i}`).value,
+                    desc:document.getElementById(`serviceDesc${i}`).value,
+                    price:document.getElementById(`servicePrice${i}`).value
+                });
+            }
+            const data=JSON.parse(localStorage.getItem('dmContent')||'{}');
+            data.services=services;
+            localStorage.setItem('dmContent',JSON.stringify(data));
+            applyChanges();
+            alert('Servicios guardados');
+        }
+
+        function saveTips(){
+            const tips=[];
+            for(let i=0;i<3;i++){
+                tips.push({
+                    title:document.getElementById(`tipTitle${i}`).value,
+                    desc:document.getElementById(`tipDesc${i}`).value,
+                    video:document.getElementById(`tipVideo${i}`).value
+                });
+            }
+            const data=JSON.parse(localStorage.getItem('dmContent')||'{}');
+            data.tips=tips;
+            localStorage.setItem('dmContent',JSON.stringify(data));
+            applyChanges();
+            alert('Tips guardados');
+        }
+
+        function saveReviews(){
+            const reviews=[];
+            for(let i=0;i<3;i++){
+                reviews.push({
+                    text:document.getElementById(`reviewText${i}`).value,
+                    name:document.getElementById(`reviewName${i}`).value
+                });
+            }
+            const data=JSON.parse(localStorage.getItem('dmContent')||'{}');
+            data.reviews=reviews;
+            localStorage.setItem('dmContent',JSON.stringify(data));
+            applyChanges();
+            alert('Reseñas guardadas');
+        }
+
+        function saveGallery(){
+            const gallery=[];
+            for(let i=0;i<6;i++){
+                gallery.push(document.getElementById(`galleryImg${i}`).value);
+            }
+            const data=JSON.parse(localStorage.getItem('dmContent')||'{}');
+            data.gallery=gallery;
+            localStorage.setItem('dmContent',JSON.stringify(data));
+            applyChanges();
+            alert('Galería guardada');
+        }
+
+        function applyChanges(){
+            const data=JSON.parse(localStorage.getItem('dmContent')||'{}');
+            if(data.logo)document.querySelector('.hero-logo').src=data.logo;
+            if(data.servicesImg)document.querySelector('.section-image img').src=data.servicesImg;
+            if(data.aboutImg)document.querySelector('.about-image img').src=data.aboutImg;
+            
+            if(data.services){
+                const cards=document.querySelectorAll('.service-card');
+                data.services.forEach((s,i)=>{
+                    if(cards[i]){
+                        cards[i].querySelector('h3').textContent=s.title;
+                        cards[i].querySelector('p').textContent=s.desc;
+                        cards[i].querySelector('.price').textContent=s.price;
+                    }
+                });
+            }
+            
+            if(data.tips){
+                const tipCards=document.querySelectorAll('.tip-card');
+                data.tips.forEach((t,i)=>{
+                    if(tipCards[i]){
+                        tipCards[i].querySelector('h3').innerHTML=`<i class="fas fa-star" style="color:var(--gold)"></i> ${t.title}`;
+                        tipCards[i].querySelector('p').textContent=t.desc;
+                        tipCards[i].querySelector('iframe').src=t.video;
+                    }
+                });
+            }
+            
+            if(data.reviews){
+                const reviewCards=document.querySelectorAll('.review-card');
+                data.reviews.forEach((r,i)=>{
+                    if(reviewCards[i]){
+                        reviewCards[i].querySelector('p').textContent=`"${r.text}"`;
+                        reviewCards[i].querySelector('.client-name').textContent=`- ${r.name}`;
+                    }
+                });
+            }
+            
+            if(data.gallery){
+                const galleryItems=document.querySelectorAll('.gallery-item img');
+                data.gallery.forEach((g,i)=>{
+                    if(galleryItems[i])galleryItems[i].src=g;
+                });
+            }
+        }
+
+        function selectWhatsAppMessage(){
+            const messages=[{text:'Hola necesito asesoría',label:'Asesoría'},{text:'Hola quiero agendar una cita',label:'Agendar Cita'}];
+            let choice='';
+            messages.forEach((m,i)=>{choice+=`${i+1}. ${m.label}\n`;});
+            const selection=prompt('Selecciona una opción:\n\n'+choice+'\nEscribe 1 o 2:');
+            if(selection==='1'){window.open('https://wa.me/573043387836?text='+encodeURIComponent(messages[0].text),'_blank');}
+            else if(selection==='2'){window.open('https://wa.me/573043387836?text='+encodeURIComponent(messages[1].text),'_blank');}
+            else if(selection!==null){alert('Opción no válida');}
+        }
+
+        window.onload=function(){applyChanges();};
+    </script>
+</body>
+</html>
+
