@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniela Mejía | Cejas y Pestañas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #0a0a0a; color: #fff; line-height: 1.6; }
+        .gold { color: #FFD700; }
+        nav { position: fixed; top: 0; width: 100%; background: rgba(10,10,10,0.95); padding: 1rem 5%; border-bottom: 2px solid #FFD700; z-index: 1000; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: #FFD700; text-decoration: none; font-weight: 700; cursor: pointer; }
+        .hero { margin-top: 70px; min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 3rem 5%; }
+        .hero-logo { width: 100%; max-width: 400px; margin-bottom: 2rem; }
+        .hero-daniela { width: 100%; max-width: 500px; margin: 0 auto 2rem; border-radius: 15px; border: 3px solid #FFD700; }
+        .social-banner { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; }
+        .social-btn { padding: 1rem 2rem; border-radius: 50px; color: #fff; text-decoration: none; font-weight: bold; border: 2px solid #FFD700; transition: 0.3s; }
+        .instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+        .tiktok { background: #000; }
+        .whatsapp { background: #25D366; }
+        .section-title { text-align: center; color: #FFD700; font-size: 2.5rem; margin: 3rem 0 2rem; font-family: 'Playfair Display', serif; }
+        section { padding: 4rem 5%; max-width: 1200px; margin: 0 auto; }
+        .services { background: #1a1a1a; max-width: 100%; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .service-card { background: #0a0a0a; border: 2px solid #FFD700; border-radius: 15px; padding: 2rem; text-align: center; }
+        .service-card i { font-size: 3rem; color: #FFD700; margin-bottom: 1rem; }
+        .service-card h3 { color: #FFD700; margin-bottom: 1rem; font-family: 'Playfair Display', serif; }
+        .price { font-size: 1.5rem; color: #FFD700; font-weight: bold; margin: 1rem 0; }
+        .btn { display: inline-block; padding: 0.8rem 2rem; background: #FFD700; color: #000; text-decoration: none; border-radius: 50px; font-weight: bold; margin-top: 1rem; }
+        .about-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; align-items: center; }
+        .about-image img { width: 100%; border-radius: 15px; border: 3px solid #FFD700; }
+        .about-content h3 { color: #FFD700; font-size: 2rem; margin-bottom: 1rem; font-family: 'Playfair Display', serif; }
+        .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; }
+        .stat-item { text-align: center; padding: 1rem; background: #1a1a1a; border: 2px solid #FFD700; border-radius: 10px; }
+        .stat-item .number { font-size: 2rem; color: #FFD700; font-weight: bold; }
+        .gallery { background: #1a1a1a; max-width: 100%; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0; }
+        .gallery-item { overflow: hidden; border: 2px solid #FFD700; aspect-ratio: 1; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+        .tips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .tip-card { background: #1a1a1a; border: 2px solid #FFD700; border-radius: 15px; padding: 2rem; }
+        .tip-card h3 { color: #FFD700; margin-bottom: 1rem; font-family: 'Playfair Display', serif; }
+        .trajectory { background: #1a1a1a; }
+        .trajectory-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .trajectory-card { border: 3px solid #FFD700; border-radius: 15px; overflow: hidden; background: #0a0a0a; }
+        .trajectory-card img { width: 100%; height: 300px; object-fit: contain; object-position: top center; background: #000; }
+        .trajectory-card-content { padding: 1.5rem; }
+        .trajectory-card h3 { color: #FFD700; margin-bottom: 0.5rem; font-family: 'Playfair Display', serif; }
+        .date-badge { display: inline-block; background: #FFD700; color: #000; padding: 0.3rem 1rem; border-radius: 20px; font-weight: bold; margin-top: 1rem; }
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .review-card { background: #1a1a1a; border: 2px solid #FFD700; border-radius: 15px; padding: 2rem; }
+        .review-card .stars { color: #FFD700; margin-bottom: 1rem; }
+        .review-card p { color: #FFF8DC; font-style: italic; margin-bottom: 1rem; }
+        .review-card .client-name { color: #FFD700; font-weight: bold; }
+        .contact { background: #1a1a1a; text-align: center; }
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; max-width: 600px; margin: 0 auto; }
+        .contact-item { padding: 1.5rem; background: #0a0a0a; border: 2px solid #FFD700; border-radius: 10px; }
+        .contact-item i { font-size: 2.5rem; color: #FFD700; margin-bottom: 1rem; }
+        .contact-item h3 { color: #FFD700; margin-bottom: 0.5rem; font-family: 'Playfair Display', serif; }
+        .contact-item a { color: #FFF8DC; text-decoration: none; }
+        footer { background: #0a0a0a; text-align: center; padding: 2rem; border-top: 2px solid #FFD700; }
+        .floating-whatsapp { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 2rem; text-decoration: none; z-index: 999; }
+        
+        /* ADMIN PANEL STYLES */
+        #adminModal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.98); z-index: 10000; overflow-y: auto; }
+        #adminModal.active { display: flex; align-items: center; justify-content: center; }
+        .admin-content { background: #1a1a1a; border: 3px solid #FFD700; border-radius: 15px; padding: 2rem; max-width: 800px; width: 95%; margin: 2rem auto; }
+        .admin-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 2px solid #FFD700; }
+        .admin-header h2 { color: #FFD700; font-family: 'Playfair Display', serif; }
+        .close-admin { background: none; border: none; color: #FFD700; font-size: 2rem; cursor: pointer; }
+        .admin-section { margin-bottom: 2rem; padding: 1.5rem; background: #0a0a0a; border: 2px solid #FFD700; border-radius: 10px; }
+        .admin-section h3 { color: #FFD700; margin-bottom: 1rem; font-size: 1.2rem; }
+        .admin-field { margin-bottom: 1rem; }
+        .admin-field label { display: block; color: #FFD700; margin-bottom: 0.5rem; font-size: 0.9rem; }
+        .admin-field input, .admin-field textarea { width: 100%; padding: 0.8rem; border: 2px solid #FFD700; background: #1a1a1a; color: #fff; border-radius: 8px; font-size: 1rem; }
+        .admin-field textarea { min-height: 100px; resize: vertical; }
+        .admin-btn { padding: 1rem; background: #FFD700; color: #000; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; width: 100%; margin-top: 0.5rem; font-size: 1rem; }
+        .admin-btn:hover { background: #FFC700; }
+        .admin-login { text-align: center; padding: 2rem; }
+        .gallery-item-admin { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; padding: 0.5rem; background: #1a1a1a; border: 1px solid #FFD700; border-radius: 8px; }
+        .gallery-item-admin img { width: 60px; height: 60px; object-fit: cover; border-radius: 5px; }
+        .gallery-item-admin input { flex: 1; }
+        .remove-btn { background: #dc2743; color: #fff; border: none; padding: 0.5rem 1rem; border-radius: 5px; cursor: pointer; }
+        .add-btn { background: #25D366; color: #fff; border: none; padding: 0.8rem; border-radius: 8px; cursor: pointer; width: 100%; margin-top: 1rem; font-weight: bold; }
+        @media (max-width: 768px) { .about-grid, .stats-grid { grid-template-columns: 1fr; } .social-banner { flex-direction: column; align-items: center; } .social-btn { width: 90%; } .hero-daniela { max-width: 90%; } .section-title { font-size: 1.8rem; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <span class="logo" id="logoTrigger">cyp by DANIELA MEJIA G</span>
+    </nav>
+
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <img src="https://i.postimg.cc/GmxHSxKz/IMG-4160.jpg" alt="Logo" class="hero-logo" id="heroLogo">
+            <img src="https://i.postimg.cc/Y0W8xX5q/63F7F0B0-6BB5-44CE-ADE4-002FE4DAF275.png" alt="Daniela" class="hero-daniela" id="heroDaniela">
+            <div class="social-banner">
+                <a href="https://www.instagram.com/cypdanielamejia" target="_blank" class="social-btn instagram" id="btnInstagram"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="https://www.tiktok.com/@danielamejiagalvis" target="_blank" class="social-btn tiktok" id="btnTiktok"><i class="fab fa-tiktok"></i> TikTok</a>
+                <a href="https://wa.me/573043387836" target="_blank" class="social-btn whatsapp" id="btnWhatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="servicios">
+        <h2 class="section-title">Nuestros Servicios</h2>
+        <div class="services-grid" id="servicesGrid">
+            <div class="service-card">
+                <i class="fas fa-eye"></i>
+                <h3>Micropigmentación</h3>
+                <p>Microblading, sombreado y efecto híbrido</p>
+                <div class="price" data-price="150000">Desde $150.000</div>
+                <a href="https://wa.me/573043387836" class="btn" target="_blank">Reservar</a>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-star"></i>
+                <h3>Extensiones de Pestañas</h3>
+                <p>Clásico, híbrido y volumen ruso</p>
+                <div class="price" data-price="80000">Desde $80.000</div>
+                <a href="https://wa.me/573043387836" class="btn" target="_blank">Reservar</a>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-magic"></i>
+                <h3>Lifting y Laminado</h3>
+                <p>Eleva y da volumen a tus pestañas</p>
+                <div class="price" data-price="70000">Desde $70.000</div>
+                <a href="https://wa.me/573043387836" class="btn" target="_blank">Reservar</a>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-paint-brush"></i>
+                <h3>Diseño de Cejas</h3>
+                <p>Diseño personalizado y depilación</p>
+                <div class="price" data-price="30000">Desde $30.000</div>
+                <a href="https://wa.me/573043387836" class="btn" target="_blank">Reservar</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="sobre-mi">
+        <h2 class="section-title">Sobre Mí</h2>
+        <div class="about-grid">
+            <div class="about-image">
+                <img src="https://i.postimg.cc/Sxk16g37/IMG-4162.png" alt="Daniela" id="aboutImage">
+            </div>
+            <div class="about-content">
+                <h3 id="aboutName">Daniela Mejía Galvis</h3>
+                <p id="aboutTitle"><i class="fas fa-certificate gold"></i> Micropigmentadora profesional certificada</p>
+                <p id="aboutDesc">Especialista en cejas y pestañas con más de 5 años de experiencia.</p>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="number" id="statPub">634+</div>
+                        <div class="label">Publicaciones</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="number" id="statFollow">2,038</div>
+                        <div class="label">Seguidoras</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="number" id="statYears">5+</div>
+                        <div class="label">Años</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery" id="galeria">
+        <h2 class="section-title">Galería</h2>
+        <div class="gallery-grid" id="galleryGrid">
+            <div class="gallery-item"><img src="https://i.postimg.cc/T16zSgCB/IMG-4161.jpg" alt="Trabajo"></div>
+            <div class="gallery-item"><img src="https://i.postimg.cc/Nfb3JyTR/IMG-4177.jpg" alt="Trabajo"></div>
+            <div class="gallery-item"><img src="https://i.postimg.cc/fRr6s68t/IMG-4151.jpg" alt="Trabajo"></div>
+            <div class="gallery-item"><img src="https://i.postimg.cc/50wGwjb2/IMG-4148.jpg" alt="Trabajo"></div>
+            <div class="gallery-item"><img src="https://i.postimg.cc/Zn4QjZqZ/IMG-4180.jpg" alt="Trabajo"></div>
+            <div class="gallery-item"><img src="https://i.postimg.cc/jSmkmyjC/IMG-4179.jpg" alt="Trabajo"></div>
+        </div>
+    </section>
+
+    <section class="tips" id="tips">
+        <h2 class="section-title">Tips de Belleza</h2>
+        <div class="tips-grid" id="tipsGrid">
+            <div class="tip-card">
+                <h3><i class="fas fa-eye gold"></i> Mantenimiento de Pestañas</h3>
+                <p>Evita mojar las primeras 24 horas. No uses rizador.</p>
+            </div>
+            <div class="tip-card">
+                <h3><i class="fas fa-moon gold"></i> Cuidados Nocturnos</h3>
+                <p>Duerme boca arriba. Usa funda de seda.</p>
+            </div>
+            <div class="tip-card">
+                <h3><i class="fas fa-star gold"></i> Tips Generales</h3>
+                <p>Hidrata tu piel. Usa protector solar.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="trajectory" id="trayectoria">
+        <h2 class="section-title">Trayectoria</h2>
+        <div class="trajectory-grid" id="trajectoryGrid">
+            <div class="trajectory-card">
+                <img src="https://i.postimg.cc/Sxk16g37/IMG-4162.png" alt="Certificación" id="trajImg1">
+                <div class="trajectory-card-content">
+                    <h3 id="trajTitle1"><i class="fas fa-graduation-cap"></i> Certificación 2026</h3>
+                    <p id="trajDesc1">Graduación en micropigmentación avanzada</p>
+                    <span class="date-badge" id="trajDate1">Junio 2026</span>
+                </div>
+            </div>
+            <div class="trajectory-card">
+                <img src="https://i.postimg.cc/mgv88Rdd/IMG-4157.jpg" alt="Formación" id="trajImg2">
+                <div class="trajectory-card-content">
+                    <h3 id="trajTitle2"><i class="fas fa-award"></i> Formación Especializada</h3>
+                    <p id="trajDesc2">Técnicas avanzadas</p>
+                    <span class="date-badge" id="trajDate2">2023</span>
+                </div>
+            </div>
+            <div class="trajectory-card">
+                <img src="https://i.postimg.cc/wvHFY2YX/IMG-4154.jpg" alt="Experiencia" id="trajImg3">
+                <div class="trajectory-card-content">
+                    <h3 id="trajTitle3"><i class="fas fa-trophy"></i> Experiencia</h3>
+                    <p id="trajDesc3">Más de 5 años transformando miradas</p>
+                    <span class="date-badge" id="trajDate3">2020-2026</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="reviews">
+        <h2 class="section-title">Reseñas</h2>
+        <div class="reviews-grid" id="reviewsGrid">
+            <div class="review-card">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p>"Daniela es increíble. Mis pestañas quedaron espectaculares."</p>
+                <div class="client-name">- María Fernanda G.</div>
+            </div>
+            <div class="review-card">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p>"El mejor diseño de cejas. Muy profesional."</p>
+                <div class="client-name">- Carolina Rodríguez</div>
+            </div>
+            <div class="review-card">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p>"Excelente atención."</p>
+                <div class="client-name">- Andrea Martínez</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contacto">
+        <h2 class="section-title">Contacto</h2>
+        <div class="contact-grid">
+            <div class="contact-item">
+                <i class="fab fa-whatsapp"></i>
+                <h3>WhatsApp</h3>
+                <a href="https://wa.me/573043387836" target="_blank" id="contactWhatsapp">304 338 7836</a>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-instagram"></i>
+                <h3>Instagram</h3>
+                <a href="https://www.instagram.com/cypdanielamejia" target="_blank" id="contactInstagram">@cypdanielamejia</a>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-tiktok"></i>
+                <h3>TikTok</h3>
+                <a href="https://www.tiktok.com/@danielamejiagalvis" target="_blank" id="contactTiktok">@danielamejiagalvis</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p class="gold" id="footerText">© 2026 Daniela Mejía - Cejas y Pestañas</p>
+        <p style="font-size: 0.9rem;"><i class="fas fa-heart gold"></i> Sonsón, Antioquia - Colombia</p>
+    </footer>
+
+    <a href="https://wa.me/573043387836" target="_blank" class="floating-whatsapp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- ADMIN PANEL -->
+    <div id="adminModal">
+        <div class="admin-content">
+            <div class="admin-header">
+                <h2>⚙️ Panel Admin - Editar Todo</h2>
+                <button class="close-admin" onclick="closeAdmin()">&times;</button>
+            </div>
+            
+            <div id="adminLogin" class="admin-login">
+                <input type="password" id="adminPass" placeholder="Contraseña" style="max-width: 300px; margin: 0 auto 1rem; display: block;">
+                <button class="admin-btn" onclick="checkAdmin()" style="max-width: 300px; margin: 0 auto;">Acceder</button>
+            </div>
+
+            <div id="adminPanel" style="display: none;">
+                <!-- HERO SECTION -->
+                <div class="admin-section">
+                    <h3>🎨 Hero - Imágenes Principales</h3>
+                    <div class="admin-field">
+                        <label>Logo URL:</label>
+                        <input type="text" id="adminHeroLogo" placeholder="URL del logo">
+                    </div>
+                    <div class="admin-field">
+                        <label>Foto Daniela URL:</label>
+                        <input type="text" id="adminHeroDaniela" placeholder="URL de la foto">
+                    </div>
+                    <button class="admin-btn" onclick="updateHero()">Actualizar Hero</button>
+                </div>
+
+                <!-- SOCIAL LINKS -->
+                <div class="admin-section">
+                    <h3>📱 Redes Sociales</h3>
+                    <div class="admin-field">
+                        <label>Instagram URL:</label>
+                        <input type="text" id="adminInstagramUrl" placeholder="https://instagram.com/...">
+                    </div>
+                    <div class="admin-field">
+                        <label>TikTok URL:</label>
+                        <input type="text" id="adminTiktokUrl" placeholder="https://tiktok.com/...">
+                    </div>
+                    <div class="admin-field">
+                        <label>WhatsApp Number:</label>
+                        <input type="text" id="adminWhatsappNum" placeholder="573043387836">
+                    </div>
+                    <button class="admin-btn" onclick="updateSocial()">Actualizar Redes</button>
+                </div>
+
+                <!-- SERVICES -->
+                <div class="admin-section">
+                    <h3>💎 Servicios - Precios</h3>
+                    <div class="admin-field">
+                        <label>Servicio 1 - Nombre:</label>
+                        <input type="text" id="adminService1Name" placeholder="Micropigmentación">
+                    </div>
+                    <div class="admin-field">
+                        <label>Servicio 1 - Descripción:</label>
+                        <textarea id="adminService1Desc" placeholder="Microblading, sombreado..."></textarea>
+                    </div>
+                    <div class="admin-field">
+                        <label>Servicio 1 - Precio (sin puntos):</label>
+                        <input type="number" id="adminService1Price" placeholder="150000">
+                    </div>
+                    <hr style="border-color: #FFD700; margin: 1rem 0;">
+                    <div class="admin-field">
+                        <label>Servicio 2 - Nombre:</label>
+                        <input type="text" id="adminService2Name">
+                    </div>
+                    <div class="admin-field">
+                        <label>Servicio 2 - Precio:</label>
+                        <input type="number" id="adminService2Price">
+                    </div>
+                    <button class="admin-btn" onclick="updateServices()">Actualizar Servicios</button>
+                </div>
+
+                <!-- ABOUT -->
+                <div class="admin-section">
+                    <h3>👤 Sobre Mí</h3>
+                    <div class="admin-field">
+                        <label>Foto URL:</label>
+                        <input type="text" id="adminAboutImage" placeholder="URL de imagen">
+                    </div>
+                    <div class="admin-field">
+                        <label>Nombre:</label>
+                        <input type="text" id="adminAboutName" placeholder="Daniela Mejía Galvis">
+                    </div>
+                    <div class="admin-field">
+                        <label>Título:</label>
+                        <input type="text" id="adminAboutTitle" placeholder="Micropigmentadora profesional...">
+                    </div>
+                    <div class="admin-field">
+                        <label>Descripción:</label>
+                        <textarea id="adminAboutDesc"></textarea>
+                    </div>
+                    <div class="admin-field">
+                        <label>Publicaciones:</label>
+                        <input type="text" id="adminStatPub" placeholder="634+">
+                    </div>
+                    <div class="admin-field">
+                        <label>Seguidoras:</label>
+                        <input type="text" id="adminStatFollow" placeholder="2,038">
+                    </div>
+                    <div class="admin-field">
+                        <label>Años:</label>
+                        <input type="text" id="adminStatYears" placeholder="5+">
+                    </div>
+                    <button class="admin-btn" onclick="updateAbout()">Actualizar Sobre Mí</button>
+                </div>
+
+                <!-- GALLERY -->
+                <div class="admin-section">
+                    <h3>🖼️ Galería de Imágenes</h3>
+                    <div id="adminGalleryList"></div>
+                    <button class="add-btn" onclick="addGalleryImage()">+ Agregar Imagen</button>
+                    <button class="admin-btn" onclick="updateGallery()" style="margin-top: 1rem;">Actualizar Galería</button>
+                </div>
+
+                <!-- TRAJECTORY -->
+                <div class="admin-section">
+                    <h3>🎓 Trayectoria</h3>
+                    <div class="admin-field">
+                        <label>Certificación 1 - Imagen:</label>
+                        <input type="text" id="adminTraj1Img">
+                    </div>
+                    <div class="admin-field">
+                        <label>Certificación 1 - Título:</label>
+                        <input type="text" id="adminTraj1Title">
+                    </div>
+                    <div class="admin-field">
+                        <label>Certificación 1 - Descripción:</label>
+                        <textarea id="adminTraj1Desc"></textarea>
+                    </div>
+                    <div class="admin-field">
+                        <label>Certificación 1 - Fecha:</label>
+                        <input type="text" id="adminTraj1Date" placeholder="Junio 2026">
+                    </div>
+                    <button class="admin-btn" onclick="updateTrajectory()">Actualizar Trayectoria</button>
+                </div>
+
+                <!-- DOWNLOAD -->
+                <div class="admin-section">
+                    <h3>💾 Descargar HTML Actualizado</h3>
+                    <button class="admin-btn" onclick="downloadHTML()">Descargar Archivo HTML</button>
+                </div>
+
+                <button class="admin-btn" onclick="closeAdmin()" style="background: #555; color: #fff; margin-top: 1rem;">Cerrar Panel</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ADMIN FUNCTIONS
+        document.getElementById('logoTrigger').addEventListener('click', function() {
+            openAdmin();
+        });
+
+        function openAdmin() {
+            document.getElementById('adminModal').classList.add('active');
+        }
+
+        function closeAdmin() {
+            document.getElementById('adminModal').classList.remove('active');
+            document.getElementById('adminPass').value = '';
+            document.getElementById('adminLogin').style.display = 'block';
+            document.getElementById('adminPanel').style.display = 'none';
+        }
+
+        function checkAdmin() {
+            if (document.getElementById('adminPass').value === 'daniela2024') {
+                document.getElementById('adminLogin').style.display = 'none';
+                document.getElementById('adminPanel').style.display = 'block';
+                loadGalleryAdmin();
+            } else {
+                alert('Contraseña incorrecta');
+            }
+        }
+
+        function updateHero() {
+            const logoUrl = document.getElementById('adminHeroLogo').value;
+            const danielaUrl = document.getElementById('adminHeroDaniela').value;
+            if (logoUrl) document.getElementById('heroLogo').src = logoUrl;
+            if (danielaUrl) document.getElementById('heroDaniela').src = danielaUrl;
+            alert('✅ Hero actualizado');
+        }
+
+        function updateSocial() {
+            const igUrl = document.getElementById('adminInstagramUrl').value;
+            const ttUrl = document.getElementById('adminTiktokUrl').value;
+            const waNum = document.getElementById('adminWhatsappNum').value;
+            
+            if (igUrl) {
+                document.getElementById('btnInstagram').href = igUrl;
+                document.getElementById('contactInstagram').href = igUrl;
+            }
+            if (ttUrl) {
+                document.getElementById('btnTiktok').href = ttUrl;
+                document.getElementById('contactTiktok').href = ttUrl;
+            }
+            if (waNum) {
+                const waLink = 'https://wa.me/' + waNum;
+                document.getElementById('btnWhatsapp').href = waLink;
+                document.getElementById('contactWhatsapp').href = waLink;
+                document.querySelector('.floating-whatsapp').href = waLink;
+            }
+            alert('✅ Redes sociales actualizadas');
+        }
+
+        function updateServices() {
+            const s1Name = document.getElementById('adminService1Name').value;
+            const s1Desc = document.getElementById('adminService1Desc').value;
+            const s1Price = document.getElementById('adminService1Price').value;
+            
+            const cards = document.querySelectorAll('.service-card');
+            if (cards[0]) {
+                if (s1Name) cards[0].querySelector('h3').textContent = s1Name;
+                if (s1Desc) cards[0].querySelector('p').textContent = s1Desc;
+                if (s1Price) {
+                    cards[0].querySelector('.price').textContent = 'Desde $' + parseInt(s1Price).toLocaleString('es-CO');
+                    cards[0].querySelector('.price').setAttribute('data-price', s1Price);
+                }
+            }
+            alert('✅ Servicios actualizados');
+        }
+
+        function updateAbout() {
+            const imgUrl = document.getElementById('adminAboutImage').value;
+            const name = document.getElementById('adminAboutName').value;
+            const title = document.getElementById('adminAboutTitle').value;
+            const desc = document.getElementById('adminAboutDesc').value;
+            const pub = document.getElementById('adminStatPub').value;
+            const follow = document.getElementById('adminStatFollow').value;
+            const years = document.getElementById('adminStatYears').value;
+            
+            if (imgUrl) document.getElementById('aboutImage').src = imgUrl;
+            if (name) document.getElementById('aboutName').textContent = name;
+            if (title) document.getElementById('aboutTitle').innerHTML = '<i class="fas fa-certificate gold"></i> ' + title;
+            if (desc) document.getElementById('aboutDesc').textContent = desc;
+            if (pub) document.getElementById('statPub').textContent = pub;
+            if (follow) document.getElementById('statFollow').textContent = follow;
+            if (years) document.getElementById('statYears').textContent = years;
+            alert('✅ Sobre mí actualizado');
+        }
+
+        function loadGalleryAdmin() {
+            const list = document.getElementById('adminGalleryList');
+            list.innerHTML = '';
+            const images = document.querySelectorAll('.gallery-item img');
+            images.forEach((img, index) => {
+                const div = document.createElement('div');
+                div.className = 'gallery-item-admin';
+                div.innerHTML = `
+                    <img src="${img.src}" alt="Img ${index + 1}">
+                    <input type="text" class="gallery-url-input" data-index="${index}" value="${img.src}" placeholder="URL de imagen">
+                    <button class="remove-btn" onclick="removeGalleryImage(${index})">Eliminar</button>
+                `;
+                list.appendChild(div);
+            });
+        }
+
+        function addGalleryImage() {
+            const list = document.getElementById('adminGalleryList');
+            const index = document.querySelectorAll('.gallery-item-admin').length;
+            const div = document.createElement('div');
+            div.className = 'gallery-item-admin';
+            div.innerHTML = `
+                <div style="width: 60px; height: 60px; background: #333; border-radius: 5px;"></div>
+                <input type="text" class="gallery-url-input" data-index="${index}" placeholder="Nueva URL de imagen">
+                <button class="remove-btn" onclick="this.parentElement.remove()">Eliminar</button>
+            `;
+            list.appendChild(div);
+        }
+
+        function removeGalleryImage(index) {
+            const items = document.querySelectorAll('.gallery-item-admin');
+            if (items[index]) {
+                items[index].remove();
+            }
+        }
+
+        function updateGallery() {
+            const grid = document.getElementById('galleryGrid');
+            grid.innerHTML = '';
+            const inputs = document.querySelectorAll('.gallery-url-input');
+            inputs.forEach(input => {
+                if (input.value.trim()) {
+                    const div = document.createElement('div');
+                    div.className = 'gallery-item';
+                    div.innerHTML = `<img src="${input.value.trim()}" alt="Trabajo">`;
+                    grid.appendChild(div);
+                }
+            });
+            alert('✅ Galería actualizada');
+        }
+
+        function updateTrajectory() {
+            const img = document.getElementById('adminTraj1Img').value;
+            const title = document.getElementById('adminTraj1Title').value;
+            const desc = document.getElementById('adminTraj1Desc').value;
+            const date = document.getElementById('adminTraj1Date').value;
+            
+            if (img) document.getElementById('trajImg1').src = img;
+            if (title) document.getElementById('trajTitle1').innerHTML = '<i class="fas fa-graduation-cap"></i> ' + title;
+            if (desc) document.getElementById('trajDesc1').textContent = desc;
+            if (date) document.getElementById('trajDate1').textContent = date;
+            alert('✅ Trayectoria actualizada');
+        }
+
+        function downloadHTML() {
+            var html = document.documentElement.outerHTML;
+            var blob = new Blob([html], { type: 'text/html' });
+            var a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'index.html';
+            a.click();
+            alert('✅ HTML descargado. Súbelo a GitHub reemplazando el archivo anterior.');
+        }
+
+        // Close modal on outside click
+        document.getElementById('adminModal').addEventListener('click', function(e) {
+            if (e.target === this) closeAdmin();
+        });
+    </script>
+</body>
+</html>
+
