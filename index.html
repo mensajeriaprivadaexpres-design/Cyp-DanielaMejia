@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyp Daniela Mejía | Cejas y Pestañas Sonsón</title>
+    <meta name="description" content="Daniela Mejía - Especialista en micropigmentación, extensiones de pestañas y diseño de cejas en Sonsón, Antioquia.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root{--gold:#d4af37;--dark:#1a1a1a;--light:#f9f9f9;--text:#333;--transition:all .3s ease}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Lato',sans-serif;color:var(--text);background:var(--light);line-height:1.6;overflow-x:hidden}
+        h1,h2,h3{font-family:'Playfair Display',serif;color:var(--dark)}
+        a{text-decoration:none;color:inherit;transition:var(--transition)}
+        ul{list-style:none}
+        img{max-width:100%;display:block}
+        
+        nav{position:fixed;top:0;width:100%;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);z-index:1000;padding:1rem 5%;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+        .logo{font-size:1.2rem;font-weight:700;color:var(--dark);letter-spacing:1px}
+        .logo span{color:var(--gold)}
+        .nav-links{display:flex;gap:2rem}
+        .nav-links a{font-size:.9rem;text-transform:uppercase;letter-spacing:1px;font-weight:700}
+        .nav-links a:hover{color:var(--gold)}
+        .menu-toggle{display:none;font-size:1.5rem;cursor:pointer}
+
+        .hero{height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.4)),url('https://i.postimg.cc/hGjXqJk8/hero-bg.jpg') center/cover no-repeat;padding:0 1rem;margin-top:60px}
+        .hero-content{color:#fff;max-width:800px}
+        .hero h1{font-size:3.5rem;margin-bottom:1rem;line-height:1.2}
+        .hero p{font-size:1.2rem;margin-bottom:2rem;opacity:.9}
+        .btn{display:inline-block;padding:.8rem 2rem;background:var(--gold);color:#fff;border-radius:50px;font-weight:700;text-transform:uppercase;letter-spacing:1px;border:2px solid var(--gold)}
+        .btn:hover{background:transparent;color:var(--gold)}
+        .btn-outline{background:transparent;border:2px solid #fff;margin-left:1rem}
+        .btn-outline:hover{background:#fff;color:var(--dark)}
+
+        section{padding:5rem 5%}
+        .section-title{text-align:center;margin-bottom:3rem}
+        .section-title h2{font-size:2.5rem;margin-bottom:.5rem}
+        .section-title .line{width:60px;height:3px;background:var(--gold);margin:0 auto}
+
+        .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
+        .service-card{background:#fff;padding:2rem;border-radius:10px;box-shadow:0 5px 20px rgba(0,0,0,.05);transition:var(--transition);text-align:center}
+        .service-card:hover{transform:translateY(-10px);box-shadow:0 10px 30px rgba(0,0,0,.1)}
+        .service-icon{font-size:2.5rem;color:var(--gold);margin-bottom:1.5rem}
+        .service-card h3{margin-bottom:1rem;font-size:1.3rem}
+        .price{color:var(--gold);font-weight:700;font-size:1.1rem;margin-top:1rem;display:block}
+
+        .gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem}
+        .gallery-item{position:relative;aspect-ratio:1;overflow:hidden;border-radius:8px;cursor:pointer}
+        .gallery-item img{width:100%;height:100%;object-fit:cover;transition:var(--transition)}
+        .gallery-item:hover img{transform:scale(1.1)}
+        dialog{border:none;border-radius:10px;padding:0;max-width:90vw;max-height:90vh;background:transparent}
+        dialog::backdrop{background:rgba(0,0,0,.9)}
+        dialog img{max-height:85vh;border-radius:8px}
+        dialog button{position:absolute;top:10px;right:10px;background:var(--gold);border:none;color:#fff;width:40px;height:40px;border-radius:50%;font-size:1.2rem;cursor:pointer}
+
+        .social-links{display:flex;justify-content:center;gap:2rem;margin-bottom:3rem}
+        .social-btn{display:flex;flex-direction:column;align-items:center;gap:.5rem;padding:1.5rem;background:#fff;border-radius:15px;min-width:120px;box-shadow:0 5px 15px rgba(0,0,0,.05);transition:var(--transition)}
+        .social-btn:hover{transform:translateY(-5px);box-shadow:0 10px 25px rgba(0,0,0,.1)}
+        .social-btn i{font-size:2rem}
+        .fa-whatsapp{color:#25D366}.fa-instagram{color:#E4405F}.fa-tiktok{color:#000}
+        
+        .contact-info{text-align:center;max-width:600px;margin:0 auto}
+        .contact-info p{margin-bottom:1rem;font-size:1.1rem}
+        .contact-info i{color:var(--gold);margin-right:.5rem}
+
+        footer{background:var(--dark);color:#fff;text-align:center;padding:2rem 5%}
+        .gold{color:var(--gold)}
+
+        .wa-float{position:fixed;bottom:2rem;right:2rem;background:#25D366;color:#fff;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;box-shadow:0 5px 20px rgba(37,211,102,.4);z-index:999;animation:pulse 2s infinite}
+        @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+
+        .fade-in{opacity:0;transform:translateY(30px);transition:all .6s ease}
+        .fade-in.visible{opacity:1;transform:translateY(0)}
+
+        @media(max-width:768px){
+            .nav-links{position:fixed;top:70px;left:0;width:100%;background:#fff;flex-direction:column;padding:2rem;gap:1.5rem;transform:translateY(-150%);transition:var(--transition);box-shadow:0 5px 10px rgba(0,0,0,.05)}
+            .nav-links.active{transform:translateY(0)}
+            .menu-toggle{display:block}
+            .hero h1{font-size:2.2rem}
+            .btn-outline{margin:1rem 0 0}
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">cyp by <span>DANIELA MEJÍA</span></div>
+        <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#galeria">Galería</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <header id="inicio" class="hero">
+        <div class="hero-content fade-in">
+            <h1>Realza tu Belleza Natural</h1>
+            <p>Especialista en Micropigmentación, Extensiones de Pestañas y Diseño de Cejas en Sonsón</p>
+            <a href="https://wa.me/573043387836?text=Hola%20Daniela,%20quiero%20agendar%20una%20cita" target="_blank" class="btn">Agendar Cita</a>
+            <a href="#servicios" class="btn btn-outline">Ver Servicios</a>
+        </div>
+    </header>
+
+    <section id="servicios">
+        <div class="section-title fade-in">
+            <h2>Mis Servicios</h2>
+            <div class="line"></div>
+        </div>
+        <div class="services-grid">
+            <div class="service-card fade-in">
+                <i class="fas fa-pen-fancy service-icon"></i>
+                <h3>Micropigmentación de Cejas</h3>
+                <p>Técnica pelo a pelo o powder brows para un acabado natural y definido que dura hasta 2 años.</p>
+                <span class="price">Desde <LaTex>id_2</LaTex>150.000</span>
+            </div>
+            <div class="service-card fade-in">
+                <i class="fas fa-gem service-icon"></i>
+                <h3>Laminado de Cejas</h3>
+                <p>Efecto lifting que peina y fija tus cejas hacia arriba para un look moderno y despejado.</p>
+                <span class="price">Desde <LaTex>id_1</LaTex>70.000</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria" style="background:#fff">
+        <div class="section-title fade-in">
+            <h2>Mi Trabajo</h2>
+            <div class="line"></div>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item fade-in" onclick="openLightbox(this
